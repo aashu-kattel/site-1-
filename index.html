@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Aashutosh</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Handjet&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Monaco, monospace;
+            background-color: #000;
+            color: #00ff00;
+        }
+
+        #name{
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            margin: 5px;
+            transform: translate(-50%, -50%);
+            font-family: 'Handjet', cursive;
+            font-size:20px;
+            color:#ff00fb;
+        }
+
+        .terminal {
+            width: 80%;
+            height:20%;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #000;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    .terminal:hover{
+        cursor:text
+    }
+
+    .terminal-header {
+        background-color: #000;
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px;
+    }
+    
+    .terminal-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-left: 5px;
+    }
+    
+    .red {
+        background-color: #ff5f56;
+        cursor:pointer;
+    }
+    
+    .yellow {
+        background-color: #ffbd2e;
+        cursor:pointer;
+    }
+
+    .green {
+        background-color: #27c93f;
+        cursor:pointer;
+    }
+    
+    .terminal-content {
+        padding: 10px;
+    }
+
+    pre {
+        margin: 0;
+        white-space: pre-line;
+        /* margin: 5px; */
+    }
+    
+    .blink {
+        animation: blink-animation 1s steps(2, start) infinite;
+    }
+    
+    @keyframes blink-animation {
+        to {
+            visibility: hidden;
+        }
+    }
+    #bin {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 5px;
+        font-family: 'Handjet', cursive;
+    }
+
+    .social-icons {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    display: flex;
+    gap: 10px;
+    /* z-index: 9999; */
+    }
+
+    .social-icons a img {
+    width: 30px; 
+    height: 30px;
+    transition: all 0.2s ease-in-out;
+    }
+
+    .social-icons a img:hover {
+    transform: scale(1.2);
+    filter: invert(1);
+    }
+
+    </style>
+    <script src="ip.js"></script>
+    <script src = "binNum.js"></script>
+</head>
+<body>
+    <span  id="name">
+        <span> >>> aashutosh_kattel </span><span class="blink">☐</span>
+    </span>
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-button red"></span>
+            <span class="terminal-button yellow"></span>
+            <span class="terminal-button green"></span>
+        </div>
+
+        <div class="terminal-content">
+            <pre>नमस्ते! मेरो टर्मिनलमा स्वागत छ ।<br><span id="here">यो रह्यो तपाईको IP &#8617;</span>
+            <span id="ip-address"></span>
+            $<span class="blink">_</span>
+            </pre>
+            <span id="bin"></span>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/aashutosh-kattel/" target="_blank">
+            <img src="static/images/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://discord.gg/tx6udrbqaN" target="_blank">
+            <img src="static/images/discord.png" alt="Discord">
+        </a>
+        <a href="https://askmitra.com/profile/aashutosh_k/" target="_blank">
+            <img src="static/images/ask.png" alt="AskMitra">
+        </a>
+        <a href="https://github.com/aashu-kattel" target="_blank">
+            <img src="static/images/github.png" alt="GitHub">
+        </a>
+        <a href="https://www.threads.net/@aashutosh_kattel" target="_blank">
+            <img src="static/images/threads.png" alt="Threads">
+        </a>
+    </div>
+</body>
+</html>
