@@ -121,6 +121,16 @@
     }
 
     </style>
+        <script>
+        let docTitle = document.title;
+         window.addEventListener("blur",()=>{
+            document.title = 'Return to terminal';
+         });
+
+        window.addEventListener("focus",()=>{
+            document.title = docTitle;
+        });
+    </script>
     <script src="ip.js"></script>
     <script src = "binNum.js"></script>
 </head>
