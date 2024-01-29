@@ -130,6 +130,11 @@
         window.addEventListener("focus",()=>{
             document.title = docTitle;
         });
+
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+            
     </script>
     <script src="ip.js"></script>
     <script src = "binNum.js"></script>
