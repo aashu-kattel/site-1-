@@ -186,34 +186,36 @@
         </a>
     </div>
     <script>
-                // to chk if the browser supports the fullscreen API
+        // to chk if the browser supports the fullscreen API
         function isFullScreenSupported() {
-          return (
-            document.fullscreenEnabled ||
-            document.webkitFullscreenEnabled ||
-            document.mozFullScreenEnabled ||
-            document.msFullscreenEnabled
-          );
+        return (
+          document.fullscreenEnabled ||
+          document.webkitFullscreenEnabled ||
+          document.mozFullScreenEnabled ||
+          document.msFullscreenEnabled
+        );
+      }
+
+      //enter full-screen mode
+      function enterFullScreen() {
+        var elem = document.documentElement;
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+          elem.mozRequestFullScreen();
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
         }
-        
-        // Function to enter full-screen mode
-        function enterFullScreen() {
-          var elem = document.documentElement;
-          if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-          } else if (elem.webkitRequestFullscreen) {
-            elem.webkitRequestFullscreen();
-          } else if (elem.mozRequestFullScreen) {
-            elem.mozRequestFullScreen();
-          } else if (elem.msRequestFullscreen) {
-            elem.msRequestFullscreen();
-          }
-        }
-        
-        // enter full-screen mode if supported ->isFullScreenSupported()
-        if (isFullScreenSupported()) {
-          enterFullScreen();
-        }
+      }
+
+      // Check if full-screen mode is supported
+      if (isFullScreenSupported()) {
+        document.body.addEventListener('mouseover', enterFullScreen);
+      } else {
+        console.log('Full-screen mode is not supported in this browser.');
+      }
     </script>
 </body>
 </html>
